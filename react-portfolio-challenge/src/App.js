@@ -1,17 +1,25 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header";
+import HeaderComponent from "./components/HeaderComponent";
 import AboutMe from "./components/AboutMe";
+import FooterComponent from "./components/FooterComponent";
+import { Content, Layout } from "react-mdl";
 
 function App() {
   return (
     <Router>
-      <Header />
-      <Switch>
-        <Route path="/" component={AboutMe}></Route>
-      </Switch>
-      <Footer />
+      <Layout>
+        <HeaderComponent />
+
+        <Content>
+          <Switch>
+            <Route path="/" component={AboutMe}></Route>
+          </Switch>
+        </Content>
+
+        <FooterComponent />
+      </Layout>
     </Router>
   );
 }
